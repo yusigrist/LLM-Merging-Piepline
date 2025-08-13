@@ -2,7 +2,7 @@
 
 Run first setup.sh
 
-And configure on script.sh the models you want to merge and evaluate. 
+And configure on script.sh the models you want to merge and evaluate and huggingface Apikey and username. 
 
 ## Plotting
 

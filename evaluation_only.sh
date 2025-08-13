@@ -21,8 +21,8 @@ pip install transformers torch torchvision torchaudio accelerate ipywidgets bits
 
 # Models to evaluate
 models=(
-  "Yuuta208/Qwen2.5-7B-Instruct-Qwen2.5-Coder-7B-Merged-della-29"
-  "Yuuta208/Qwen2.5-7B-Instruct-Qwen2.5-Coder-7B-Merged-task_arithmetic-29"
+  "_username_/Qwen2.5-7B-Instruct-Qwen2.5-Coder-7B-Merged-della-29"
+  "_username_/Qwen2.5-7B-Instruct-Qwen2.5-Coder-7B-Merged-task_arithmetic-29"
   "Qwen/Qwen2.5-Coder-7B"
 )
 
