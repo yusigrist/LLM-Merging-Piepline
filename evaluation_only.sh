@@ -19,10 +19,8 @@ pip install transformers torch torchvision torchaudio accelerate ipywidgets bits
 # Step 2: Define variables (equivalent to the Python script)
 ################################################################################
 
-# Models to evaluate
+# Models to evaluate from Hugging Face
 models=(
-  "_username_/Qwen2.5-7B-Instruct-Qwen2.5-Coder-7B-Merged-della-29"
-  "_username_/Qwen2.5-7B-Instruct-Qwen2.5-Coder-7B-Merged-task_arithmetic-29"
   "Qwen/Qwen2.5-Coder-7B"
 )
 

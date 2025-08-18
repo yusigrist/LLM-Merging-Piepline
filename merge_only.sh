@@ -17,9 +17,10 @@ echo "Installing required packages..."
 pip install transformers torch torchvision torchaudio accelerate ipywidgets bitsandbytes
 
 ################################################################################
-# Step 2: Define variables (equivalent to the Python script)
+# Step 2: Define variables 
 ################################################################################
 
+# Define models and tasks for evaluations
 # Models to merge
 model_1="Qwen/Qwen2.5-7B-Instruct"
 model_2="Qwen/Qwen2.5-Coder-7B"
@@ -67,7 +68,7 @@ for i in "${!merge_methods[@]}"; do
     echo "Processing merge method: $merge_method"
 
     # Construct merged model name (e.g., Qwen2.5-Coder-7B-Qwen2.5-Math-7B-Merged-linear-19)
-    merged_model_name="$(basename "$model_1")-$(basename "$model_2")-Merged-${merge_method}-29"
+    merged_model_name="$(basename "$model_1")-$(basename "$model_2")-Merged-${merge_method}"
 
     # Create the MergeKit config file based on merge_method
     mkdir -p "$(dirname "$mergekit_config_path")"

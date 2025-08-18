@@ -17,9 +17,10 @@ echo "Installing required packages..."
 pip install transformers torch torchvision torchaudio accelerate ipywidgets bitsandbytes
 
 ################################################################################
-# Step 2: Define variables (equivalent to the Python script)
+# Step 2: Define variables 
 ################################################################################
 
+# Define models and tasks for evaluations
 model_1="Qwen/Qwen2.5-Coder-7B"
 do_model_1_holmes=false
 # Tasks for LM Evaluation Harness for model_1:
@@ -168,7 +169,7 @@ for i in "${!merge_methods[@]}"; do
     echo "Processing merge method: $merge_method"
 
     # Construct merged model name (e.g., Qwen2.5-Coder-7B-Qwen2.5-Math-7B-Merged-linear-19)
-    merged_model_name="$(basename "$model_1")-$(basename "$model_2")-Merged-${merge_method}-24"
+    merged_model_name="$(basename "$model_1")-$(basename "$model_2")-Merged-${merge_method}"
 
     # Create the MergeKit config file based on merge_method
     mkdir -p "$(dirname "$mergekit_config_path")"
@@ -284,7 +285,7 @@ echo "All merging processes completed!"
 # Start evaluations after all merging processes are done
 for i in "${!merge_methods[@]}"; do
     merge_method="${merge_methods[$i]}"
-    merged_model_name="$(basename "$model_1")-$(basename "$model_2")-Merged-${merge_method}-24"
+    merged_model_name="$(basename "$model_1")-$(basename "$model_2")-Merged-${merge_method}"
 
     harness_batch_size_temp=$harness_batch_size
     if [ "$merge_method" = "moe" ]; then
