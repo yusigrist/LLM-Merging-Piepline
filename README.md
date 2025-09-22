@@ -1,6 +1,6 @@
 # LLM Merging & Evaluation Pipeline
 
-This pipeline provides a comprehensive toolkit to merge, evaluate, and analyze Large Language Models (LLMs). It leverages powerful open-source tools like `mergekit` for model merging and `lm-evaluation-harness` & `holmes-evaluation` for robust performance assessment. The entire process, from merging to plotting results, is automated through a series of configurable shell scripts.
+This pipeline provides a comprehensive toolkit to merge, evaluate, and analyze Large Language Models (LLMs). It leverages powerful open-source tools like `mergekit` for model merging and `lm-evaluation-harness` & `holmes-evaluation` for robust performance assessment. The entire process, from merging to results, is automated through a series of configurable shell scripts.
 
 ## 🚀 Features
 
@@ -8,7 +8,6 @@ This pipeline provides a comprehensive toolkit to merge, evaluate, and analyze L
 * **Comprehensive Evaluation**: Utilizes standard academic benchmarks through `lm-evaluation-harness` (e.g., MMLU, GSM8K, Leaderboard) and linguistic capability probing with `holmes-evaluation` (Flash-Holmes).
 * **Automated Workflow**: Streamlines the end-to-end process of merging, uploading to Hugging Face, and evaluating with simple script execution.
 * **Parallel Processing**: Efficiently runs evaluations on multiple models in parallel across different GPUs.
-* **Rich Visualization**: Includes Jupyter notebooks to generate detailed plots comparing model performance, including absolute scores and correlation analyses.
 
 ---
 
@@ -22,9 +21,6 @@ This pipeline provides a comprehensive toolkit to merge, evaluate, and analyze L
 ├── harness\_results/      \# Raw output from lm-evaluation-harness
 ├── holmes\_results/       \# Raw output from holmes-evaluation
 ├── organized\_results/    \# Cleaned and organized evaluation results
-├── Plotting/             \# Jupyter notebooks and scripts for visualization
-│   ├── organize\_harness.py \# Script to organize harness results
-│   └── \*.ipynb           \# Notebooks for plotting
 ├── setup.sh              \# 🚀 **START HERE**: Installs all dependencies and sets up environments
 ├── script.sh             \# Main script for a full merge, upload, and evaluate pipeline
 ├── merge\_only.sh         \# Script to only merge models and upload them
@@ -109,23 +105,3 @@ Open `evaluation_only.sh` and set:
 
 -----
 
-## 📊 Plotting and Analysis
-
-After running your evaluations, the results can be organized and visualized using the provided notebooks.
-
-1.  **Organize Harness Results**: First, run the `organize_harness.py` script to process the raw JSON outputs from `lm-evaluation-harness` into a clean, structured format.
-
-    ```bash
-    python3 Plotting/organize_harness.py
-    ```
-
-    This will populate the `organized_results` directory.
-
-2.  **Generate Plots**: Open the Jupyter notebooks in the `Plotting/` directory to generate visualizations.
-
-      * **`Absolute_Performance_Harness.ipynb`**: Compares the absolute scores of models on various Harness tasks.
-      * **`Mean_Absolute_Performance_Holmes_Plot.ipynb`**: Shows the mean performance of models across different linguistic competencies as measured by Holmes.
-      * **`Correlation_holmes_harness.ipynb`**: Creates a correlation matrix to show how performance on Holmes linguistic tasks relates to performance on Harness benchmarks.
-      * **`Other_holmes_plots.ipynb` & `Other_harness_plots.ipynb`**: Contain a variety of other detailed visualizations.
-
-<!-- end list -->
